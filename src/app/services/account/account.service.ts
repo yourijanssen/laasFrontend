@@ -7,7 +7,7 @@ import { tap } from 'rxjs/operators';
   providedIn: 'root',
 })
 export class AccountService {
-  private baseUrl = 'http://localhost:8080/api/accounts';
+  private baseUrl = 'https://projectlaasbackend-hpaeeweaexhcd0d3.westeurope-01.azurewebsites.net/api/accounts';
   private loggedIn = new BehaviorSubject<boolean>(false);
 
   isLoggedIn$ = this.loggedIn.asObservable();

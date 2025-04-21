@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root',
 })
 export class HelloService {
-  private apiUrl = 'http://localhost:8080/hello'; // Adjust the URL as needed
+  private apiUrl = 'https://projectlaasbackend-hpaeeweaexhcd0d3.westeurope-01.azurewebsites.net/hello'; // Adjust the URL as needed
 
   constructor(private http: HttpClient) {}
 
