@@ -1,0 +1,55 @@
+.register-form {
+  max-width: 400px;
+  margin: 0 auto;
+  margin-top: 50px;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.register-form h2 {
+  text-align: center;
+}
+
+.register-form div {
+  margin-bottom: 10px;
+}
+
+.register-form label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.register-form input,
+.register-form select {
+  width: 100%;
+  padding: 8px;
+  box-sizing: border-box;
+}
+
+.register-form button {
+  width: 100%;
+  padding: 10px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.register-form button:hover {
+  background-color: #0056b3;
+}
+
+/* Validation message styles */
+.validation-error {
+  color: red;
+  font-size: 0.9em;
+  margin-top: 5px;
+}
+
+.validation-success {
+  color: green;
+  font-size: 0.9em;
+  margin-top: 5px;
+}

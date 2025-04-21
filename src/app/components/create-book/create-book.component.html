@@ -1,0 +1,65 @@
+<div class="book-form">
+  <h2>Add a New Book</h2>
+  <form [formGroup]="bookForm" (ngSubmit)="addBook()">
+    <div>
+      <label for="title">Title:</label>
+      <input type="text" id="title" formControlName="title" required />
+      <div *ngIf="submitted && bookForm.controls['title'].invalid" class="validation-error">
+        <div *ngIf="bookForm.controls['title'].errors?.['required']">Title is required.</div>
+      </div>
+    </div>
+
+    <div>
+      <label for="author">Author:</label>
+      <input type="text" id="author" formControlName="author" required />
+      <div *ngIf="submitted && bookForm.controls['author'].invalid" class="validation-error">
+        <div *ngIf="bookForm.controls['author'].errors?.['required']">Author is required.</div>
+      </div>
+    </div>
+
+    <div>
+      <label for="description">Description:</label>
+      <textarea id="description" formControlName="description" required></textarea>
+      <div *ngIf="submitted && bookForm.controls['description'].invalid" class="validation-error">
+        <div *ngIf="bookForm.controls['description'].errors?.['required']">Description is required.</div>
+      </div>
+    </div>
+
+    <div>
+      <label for="isbn10">ISBN-10:</label>
+      <input type="text" id="isbn10" formControlName="isbn10" />
+    </div>
+
+    <div>
+      <label for="isbn13">ISBN-13:</label>
+      <input type="text" id="isbn13" formControlName="isbn13" required />
+      <div *ngIf="submitted && bookForm.controls['isbn13'].invalid" class="validation-error">
+        <div *ngIf="bookForm.controls['isbn13'].errors?.['required']">ISBN-13 is required.</div>
+      </div>
+    </div>
+
+    <div>
+      <label for="imgUrl">Image URL:</label>
+      <input type="text" id="imgUrl" formControlName="imgUrl" required />
+      <div *ngIf="submitted && bookForm.controls['imgUrl'].invalid" class="validation-error">
+        <div *ngIf="bookForm.controls['imgUrl'].errors?.['required']">Image URL is required.</div>
+      </div>
+    </div>
+
+    <div>
+      <label for="ebookUrl">Ebook URL (optional):</label>
+      <input type="text" id="ebookUrl" formControlName="ebookUrl" />
+    </div>
+
+    <div>
+      <label for="copies">How many copies:</label>
+      <input type="number" id="copies" formControlName="copies" required min="1" />
+      <div *ngIf="submitted && bookForm.controls['copies'].invalid" class="validation-error">
+        <div *ngIf="bookForm.controls['copies'].errors?.['required']">Number of copies is required.</div>
+        <div *ngIf="bookForm.controls['copies'].errors?.['min']">At least 1 copy is required.</div>
+      </div>
+    </div>
+
+    <button type="submit">Add Book</button>
+  </form>
+</div>

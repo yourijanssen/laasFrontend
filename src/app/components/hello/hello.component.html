@@ -1,0 +1,6 @@
+<div>
+  <h1>Hello Message</h1>
+  <input type="number" [(ngModel)]="messageId" placeholder="Enter message ID" />
+  <button (click)="fetchMessage()">Fetch Message</button>
+  <p *ngIf="message">{{ message.message }}</p>
+</div>

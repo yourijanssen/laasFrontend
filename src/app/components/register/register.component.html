@@ -1,0 +1,87 @@
+<div class="register-form">
+  <h2>Register</h2>
+  <form [formGroup]="registerForm" (ngSubmit)="register()">
+    <div>
+      <label for="name">Name:</label>
+      <input type="text" id="name" formControlName="name"  placeholder="Enter your name" required />
+      <div *ngIf="submitted && name?.invalid" class="validation-error">
+        <div *ngIf="name?.errors?.['required']">Name is required.</div>
+        <div *ngIf="name?.errors?.['minlength']">
+          Name must be at least 2 characters long.
+        </div>
+        <div *ngIf="name?.errors?.['maxlength']">
+          Name cannot be more then 50 characters long.
+        </div>
+        <div *ngIf="name?.errors?.['pattern']">
+          Name can only contain letters.
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <label for="email">Email:</label>
+      <input type="email" id="email" formControlName="email"  placeholder="Enter your email" required />
+      <div *ngIf="submitted && email?.invalid" class="validation-error">
+        <div *ngIf="email?.errors?.['required']">Email is required.</div>
+        <div *ngIf="email?.errors?.['email']">Invalid email format.</div>
+        <div *ngIf="email?.errors?.['pattern']">
+          Please enter a valid email address.
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <label for="password">Password:</label>
+      <input
+        type="password"
+        id="password"
+        formControlName="password"
+        placeholder="Enter your password"
+        
+        required
+      />
+      <div *ngIf="submitted && password?.invalid" class="validation-error">
+        <div *ngIf="password?.errors?.['required']">Password is required.</div>
+        <div *ngIf="password?.errors?.['minlength']">
+          Password must be at least 8 characters long.
+        </div>
+        <div *ngIf="password?.errors?.['pattern']">
+          Password must contain at least one uppercase letter, one lowercase
+          letter, one number, and one special character.
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <label for="confirmPassword">Confirm Password:</label>
+      <input
+        type="password"
+        id="confirmPassword"
+        formControlName="confirmPassword"
+        placeholder="Confirm your password"
+        required
+      />
+      <div
+        *ngIf="submitted && (confirmPassword?.invalid || registerForm.errors?.['passwordMismatch'])"
+        class="validation-error"
+      >
+        <div *ngIf="confirmPassword?.errors?.['required']">
+          Please confirm your password.
+        </div>
+        <div *ngIf="registerForm.errors?.['passwordMismatch']">
+          Passwords do not match.
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <label for="role">Role:</label>
+      <select id="role" formControlName="role">
+        <option value="TRAINEE">Trainee</option>
+        <option value="TRAINER">Trainer</option>
+      </select>
+    </div>
+
+    <button type="submit">Register</button>
+  </form>
+</div>

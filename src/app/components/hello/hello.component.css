@@ -1,0 +1,13 @@
+/* Add your component-specific styles here */
+div {
+  text-align: center;
+  margin-top: 50px;
+}
+
+input {
+  margin-right: 10px;
+}
+
+button {
+  margin-bottom: 20px;
+}
